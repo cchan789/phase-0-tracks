@@ -1,9 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Charle's website</title>
+    <title>Charle's Pizza Restaurant</title>
   </head>
   <body>
-
+    <form name="Pizza order" action="success.html" method="post">
+      <fieldset>
+        <div>
+          <label>Name</label>
+          <input type="text" name="name">
+        </div>
+        <div>
+          <label>Email</label>
+          <input type="email" name="email">
+        </div>
+        <div>
+          <label>Phone Number</label>
+          <input type="tel" name="telephone">
+        </div>
+      </fieldset>
+      <fieldset>
+        <div>
+          <label>Choose your crust</label>
+          <select name="crust">
+            <option value="thin-crust">Thin Crust</option>
+            <option value="deep-dish">Deep Dish</option>
+            <option value="regular">Regular</option>
+          </select>
+        </div>
+        <div>
+          <label>If you need anything else please let us know: </label>
+          <br>
+          <textarea name="concerns" rows="8" cols="50"></textarea>
+        </div>
+        <h3>Toppings</h3>
+        <div>
+          <input type="checkbox" name="pepperoni" value="true">
+          <label>Pepperoni</label>
+        </div>
+        <div>
+          <input type="checkbox" name="ham" value="true">
+          <label>Ham</label>
+        </div>
+        <div>
+          <input type="checkbox" name="pineapple" value="true">
+          <label>Pineapple</label>
+        </div>
+        <div>
+          <input type="checkbox" name="extra-cheese" value="true">
+          <label>Extra Cheese</label>
+        </div>
+        <div>
+          <input type="checkbox" name="sausage" value="true">
+          <label>Sausage</label>
+        </div>
+      </fieldset>
+      <button type="submit">Place your order</button>
+    </form>
   </body>
 </html>
