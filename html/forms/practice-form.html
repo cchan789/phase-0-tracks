@@ -1,9 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Your Title Here</title>
+    <title> Course Feedback</title>
   </head>
   <body>
-    Your Content Here
+    <form name="adventure" action="success.html" method="post">
+  <fieldset>
+    <div>
+      <label>Name:</label>
+      <input type="text" name="name">
+    </div>
+
+    <div>
+      <label>Student/Faculty ID:</label>
+      <input type="number" name="id">
+    </div>
+
+    <div>
+      <label>Password:</label>
+      <input type="password" name="password">
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div>
+      <label>Course Title:</label>
+      <input type="text" name="coursetitle">
+    </div>
+
+    <div>
+      <label>Level of course:</label>
+      <select name="level">
+        <option value="Undergraduate">Undergraduate</option>
+        <option value="Graduate">Graduate</option>
+        <option value="Postgraduate">Postgraduate</option>
+      </select>
+    </div>
+
+    <div>    
+      <label>Write your comments:</label>
+      <textarea name="textarea" rows="10" cols="50">Write something here</textarea>
+    </div>
+
+    <div>
+        <label>Would you like your response to be anonymous?</label>
+        <input type="radio" name="anonymous" value="yes" checked> Yes<br>
+        <input type="radio" name="anonymous" value="no"> No<br>
+    </div>
+  </fieldset>
+  
+  <button type="submit">Submit your response</button>
+</form>
+    
   </body>
 </html> 
