@@ -1,12 +1,13 @@
 body{
-  max-width:960px;
+  max-width:1500px;
 }
 
 main{
-  width: 80%;
-  display: inline;
+  width: 75%;
   float: right;
   vertical-align: text-top;
+  padding: 5px;
+  min-width: 200px;
 }
 
 blockquote {
@@ -27,9 +28,10 @@ cite {
 
 }
 #external-links{
-  width: 200px;
+  width: 20%;
   float: left;
   vertical-align: text-top;
+  min-width: 100px;
 }
 /* you're welcome to edit the
 image, figure, and figcaption CSS if you'd like, 
@@ -46,4 +48,56 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+/*@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}*/
+
+@media screen and (max-width: 465px) {
+main {
+  display: block;
+  float: left;
+ }
+
+ #external-links {
+  display: block;
+  float: left;
+ }
+}
+@media screen and (max-width: 300px) {
+ h1 {
+   font-size: 1em;
+ }
+
+ p {
+   font-size: .5em;
+ }
+
+ li {
+   font-size: .5em;
+ }
+
+ figcaption {
+   font-size: .5em;
+ }
+
+ blockquote {
+   font-size: .5em;
+ }
+}
+@media screen and (min-width: 800px) {
+  #external-links{
+  width: 20%;
+  float: left;
+  }
+  main {
+    width: 50%;
+  float: left;
+ }
+  #diy{
+display: inline-block;
+  }
 }
