@@ -13,3 +13,9 @@
 .accomps {
   font-size: .8em;
 }
+ul:first-letter{
+font-size: 1.2em;
+}
+section > h3 {
+color: blue;
+}
