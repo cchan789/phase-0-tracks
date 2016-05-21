@@ -1,13 +1,19 @@
-.octopus{     
-          position: absolute;
-          top: 0; bottom:0; left: 0; right:0;
-          margin: auto;
-  
-}
-.glasses{
-  position: relative;
-  width: 20%;
-  top:160px;
-  left:320px;
-  
-}
+.octopus{
+    display: block;
+    margin: 0 auto;
+    margin-top: 200px;
+    }
+    
+.glasses{   
+    position: relative; 
+    display: block;
+    margin: 0 auto;
+    margin-top: -185px;
+    }
+    
+.hat{   
+    position: relative; 
+    display: block;
+    margin: 0 auto;
+    margin-top: -245px;
+    }
