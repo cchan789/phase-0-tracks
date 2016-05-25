@@ -1,1 +1,27 @@
-p {color:red;}
+
+.column-1, .column-2 {
+    float: left;
+    width: 45%;
+    margin: 10px;
+    padding: 5px;
+}
+a:hover{
+  color:green;
+}
+
+h1 { 
+    text-align:center;
+  }
+  
+
+
+.column-1 { background-color: pink;}
+.column-2 { background-color: lightblue;}
+
+footer {
+  clear: left;
+}
+
+body {
+  font-family: Arial;
+}
