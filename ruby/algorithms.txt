@@ -1,0 +1,20 @@
+When elevator door opens, proceed straight forward through door to wall
+Turn on optical senseors
+  while ()wall in front of you does not have buttons)
+    turn 90 degrees to the right
+    check for buttons
+a column is a vertical line of object(s)
+a row is a horizontal line of object(s)
+while view has more than one button column
+  direct view left until only one button column is in view
+while view has more than one button row
+  direct view down until only one button row is in view
+center view on remaining button
+while button_number_does_not_match
+  if button_is_in_center_of_view
+    direct view right until button value is different from prior value and is in center_of_view
+    unless there is no button to the right
+  else if 
+
+
+
