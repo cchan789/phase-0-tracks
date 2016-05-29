@@ -1,0 +1,63 @@
+When elevator door opens, proceed straight forward through door to wall
+# Assuming robot is in ground floor,facing the optical panel
+# Assumes the robot know his destination floor, x
+# Assumes robot's vision can only focus and read one button at a time.
+Turn on optical senseors
+  while ()wall in front of you does not have buttons)
+    turn 90 degrees to the right
+    check for buttons
+a column is a vertical line of object(s)
+a row is a horizontal line of object(s)
+while view has more than one button column
+  direct view left until only one button column is in view
+while view has more than one button row
+  direct view down until only one button row is in view
+center view on remaining button
+while button_number_does_not_match
+  if button_is_in_center_of_view
+    check if value matches given destination floor value,x.
+      if match
+        stop
+      else
+        direct view right until button value is different from prior value and is in center_of_view
+        increment distance counter (total distance from starting button in row)
+          if there is no button to the right (check by time to find button)
+            then direct view left by distance counter
+            direct view up until next button is in center vision
+            
+            
+push button
+Now the elevator is ascending,the robot need to know when to exit the correct floor.
+The elevator may stop and open floor below floor x.
+
+The robot has to keep eyes on door number on door when door open
+When the number matches x, robot exits
+
+Task complete.
+
+
+Real-Life Task Algorithm  :Make cup of coffee for Breakfast.
+
+Obtain a coffee cup.
+Put it upright on the kitchen table.
+get coffee jar,
+Scoop one teaspooful and drop it inside coffee cup.
+get sugar jar,
+Scoop one teaspoonful and drop it into the coffee cup
+
+# To obtain boiling water.
+Fill up a kettle with cold water
+Put the kettle on stove, 
+Turn on the stove heat to maximum,
+When kettle water produces Hissing sound,turn off stove.
+Lift up kettle 
+Pour hot water into coffee until full
+Stir the coffee with a spoon 5 times
+
+done
+
+
+
+
+
+
