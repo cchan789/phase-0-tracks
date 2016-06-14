@@ -45,7 +45,7 @@ class Hospital
     end
     
     def name=(value)
-        if value == ""
+    if value == ""
             raise "Name can't be blank!"
         end
         @name = value
