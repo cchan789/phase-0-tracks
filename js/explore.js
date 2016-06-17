@@ -2,8 +2,8 @@
 //I split up the characters 
 //I put the characters in an array
 //I get the number of characters on the string =.length
-//I make a blank string
-//I loop through the arraay from the back, adding each character to the created string
+//I make a empty string
+//I loop through the arraay from the back, adding each character to the created empty string
 //I return the string
 
 
