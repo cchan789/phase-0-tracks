@@ -81,7 +81,7 @@ console.log(longest_string(a));
 console.log(longest_string(b));
 console.log(longest_string(c));
 
-console.log('')
+console.log('');
 
 var d = {name:"joe", age: 35};
 var e = {name:"bob", age: 27};
@@ -90,12 +90,12 @@ console.log(key_value_match(d,e));
 console.log(key_value_match(d,f));
 console.log(key_value_match(e,f));
 
-console.log('')
+console.log('');
 
 for (z = 0; z < 10; z++){
-var k = Math.floor(Math.random()*10+1);
-var tmp_arr = random_test_data(k);
-console.log(tmp_arr);
-var st = longest_string(tmp_arr);
-console.log(st);
+  var k = Math.floor(Math.random()*10+1);
+  var tmp_arr = random_test_data(k);
+  console.log(tmp_arr);
+  var st = longest_string(tmp_arr);
+  console.log(st);
 }
