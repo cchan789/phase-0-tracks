@@ -1,0 +1,20 @@
+sqlite> select * from businesses, reviews, users where reviews.businesses_id = businesses.id and reviews.users_id = users.id;
+
+	1|Toyota Sushi Bar|1|4|Great sushi|1|3|3|John|Bommer
+	2|Henry Soup Kitchen|2|3|Best Soup ever.|2|2|2|Henry|Smith
+	3|Lotus Yoga|3|3|At peace. Great environment|3|6|6|Hilary|Trump
+	4|Eagle Night Club|4|2|Too Violent, watch out for broken glases on floor|4|3|3|John|Bommer
+	6|Computer inc|5|5|Perfect coding place.|6|1|1|Sushi|Wong
+
+
+sqlite> select businesses.name, reviews.stars, reviews.comments, users.name, users.last from reviews join businesses, users on reviews.businesses_id = businesses.id and reviews.users_id = users.id;
+
+	Toyota Sushi Bar|4|Great sushi|John|Bommer
+	Henry Soup Kitchen|3|Best Soup ever.|Henry|Smith
+	Lotus Yoga|3|At peace. Great environment|Hilary|Trump
+	Eagle Night Club|2|Too Violent, watch out for broken glases on floor|John|Bommer
+	Computer inc|5|Perfect coding place.|Sushi|Wong
+
+sqlite> select businesses.name, reviews.stars, reviews.comments, users.name, users.last from reviews join businesses, users on reviews.businesses_id = businesses.id and reviews.users_id = users.id where reviews.businesses_id=2;
+
+	Henry Soup Kitchen|3|Best Soup ever.|Henry|Smith
