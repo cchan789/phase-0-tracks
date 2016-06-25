@@ -1,0 +1,70 @@
+1 - Display information from one table
+sqlite> select * from patients;
+1|peter pan|6|false|1
+2|S Wong|56|true|2
+3|Jen Baum|25|true|4
+4|G.Taft|72|true|3
+5|Stonewall Jackson|65|false|1
+6|Hugo Chavez|44|false|2
+7|Che Guevera|91|false|3
+8|Herbert Hoover|87|false|4
+9|Bob Ross|56|true|2
+
+2 - Update an item meeting some condition
+sqlite> update patients set has_insurance="false" where name ="Bob Ross";
+
+3 - Display the information in both tables using one query
+sqlite> select *
+   ...> from doctor, patients
+   ...> where doctor.doc_id = patients.doc_id;
+1|J. Smith|pediatric|true|1|peter pan|6|false|1
+2|C Chan|internal medicine|true|2|S Wong|56|true|2
+4|J. Dev|obgyn|true|3|Jen Baum|25|true|4
+3|P. Cohen|surgery|true|4|G.Taft|72|true|3
+1|J. Smith|pediatric|true|5|Stonewall Jackson|65|false|1
+2|C Chan|internal medicine|true|6|Hugo Chavez|44|false|2
+3|P. Cohen|surgery|true|7|Che Guevera|91|false|3
+4|J. Dev|obgyn|true|8|Herbert Hoover|87|false|4
+2|C Chan|internal medicine|true|9|Bob Ross|56|false|2
+
+4 - Display a narrower selection of columns from both tables using one query
+sqlite> select doctor.name,patients.name,patients.age
+   ...> from doctor, patients
+   ...> where doctor.doc_id = patients.doc_id;
+J. Smith|peter pan|6
+C Chan|S Wong|56
+J. Dev|Jen Baum|25
+P. Cohen|G.Taft|72
+J. Smith|Stonewall Jackson|65
+C Chan|Hugo Chavez|44
+P. Cohen|Che Guevera|91
+J. Dev|Herbert Hoover|87
+C Chan|Bob Ross|56
+
+5 - Delete an item meeting some condition
+sqlite> delete from patients where age>90;
+
+Inner Join
+sqlite> select *
+   ...> from patients
+   ...> inner join doctor
+   ...> on patients.doc_id = doctor.doc_id;
+1|peter pan|6|false|1|1|J. Smith|pediatric|true
+2|S Wong|56|true|2|2|C Chan|internal medicine|true
+3|Jen Baum|25|true|4|4|J. Dev|obgyn|true
+4|G.Taft|72|true|3|3|P. Cohen|surgery|true
+5|Stonewall Jackson|65|false|1|1|J. Smith|pediatric|true
+6|Hugo Chavez|44|false|2|2|C Chan|internal medicine|true
+8|Herbert Hoover|87|false|4|4|J. Dev|obgyn|true
+9|Bob Ross|56|false|2|2|C Chan|internal medicine|true
+
+Left Outer Join
+sqlite> select *
+   ...> from patients
+   ...> left join doctor
+   ...> on patients.p_id = doctor.doc_id
+   ...> where doctor.doc_id is null;
+5|Stonewall Jackson|65|false|1||||
+6|Hugo Chavez|44|false|2||||
+8|Herbert Hoover|87|false|4||||
+9|Bob Ross|56|false|2||||
