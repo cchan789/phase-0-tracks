@@ -38,7 +38,15 @@ def create_pfeel(db, name, age, feeling, intensity, you_need_help)
   intensity = gets.chomp.to_i
   intensity = intensity - 1
   intense = $intensities[intensity]
-  db.execute("INSERT INTO people_feelings (name, age, feelings, intensity, you_need_help) VALUES (?, ?, ?, ?, ?)", [name, age, feel, intense, you_need_help])
+  puts "do you need help? If so, please input yes, and if not, please input no"
+  needshelp = gets.chomp
+  assi = (needshelp == "yes")
+  if assi
+    assist = 'true'
+  else
+    assist = 'false'
+  end
+  db.execute("INSERT INTO people_feelings (name, age, feelings, intensity, you_need_help) VALUES (?, ?, ?, ?, ?)", [name, age, feel, intense, assist])
 end
 
 finished = false
@@ -53,7 +61,12 @@ end
 
 pfeelings = db.execute("SELECT * FROM people_feelings")
  pfeelings.each do |personfeeling|
-  puts "#{personfeeling['name']} is #{personfeeling['age']} years of age and is feeling #{personfeeling['intensity']} #{personfeeling['feelings']}"
+   if personfeeling['you_need_help'] == 'true'
+     nhelp = "needs help"
+   else
+     nhelp = "doesn't need help"
+   end
+  puts "#{personfeeling['name']} is #{personfeeling['age']} years of age and is feeling #{personfeeling['intensity']} #{personfeeling['feelings']} and #{nhelp}"
 end
 
 #db.execute("drop table people_feelings")
